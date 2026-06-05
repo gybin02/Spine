@@ -10,6 +10,7 @@ import Foundation
 enum SpineError: LocalizedError {
     
     case jsonFileLoadingFromBundleFailed(String)
+    case binaryFileLoadingFromBundleFailed(String)
     case missingAnimatonNamed(String)
     case missingSkinNamed(String)
     case unableApplyTextureToRegionAttachmentNode(String)
@@ -19,6 +20,8 @@ enum SpineError: LocalizedError {
         switch self {
         case let .jsonFileLoadingFromBundleFailed(fileName):
             return "JSON file \(fileName) loading from bundle failed. "
+        case let .binaryFileLoadingFromBundleFailed(fileName):
+            return "Binary file \(fileName) loading from bundle failed. "
             
         case let .missingAnimatonNamed(animationName):
             return "Missing animation named: \(animationName)"
